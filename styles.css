@@ -1,0 +1,80 @@
+/* SHINING – CRYSTAL NEON THEME FOR ANTOR 01 ACADEMY */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap');
+
+:root{
+  --glass: rgba(255,255,255,0.28);
+  --glow-blue: #4da3ff;
+  --glow-purple: #d06bff;
+  --glow-cyan: #4fffd7;
+  --bg-gradient: linear-gradient(135deg,#dff3ff,#f3e8ff,#ffe9f3);
+  --card-bg: rgba(255,255,255,0.56);
+  --text-dark: #0a0f1c;
+  --muted: #556070;
+  --radius: 16px;
+  --shadow-deep: 0 8px 32px rgba(31,38,135,0.18);
+}
+
+*{box-sizing:border-box}
+body{
+  margin:0;
+  font-family:"Poppins",sans-serif;
+  color:var(--text-dark);
+  background: var(--bg-gradient);
+  background-size:300% 300%;
+  animation: bgMove 15s infinite alternate;
+}
+@keyframes bgMove{0%{background-position:0% 0%;}100%{background-position:100% 100%;}}
+
+.top{
+  display:flex;justify-content:space-between;align-items:center;
+  padding:1rem 2rem;background: rgba(255,255,255,0.24);
+  backdrop-filter: blur(10px);box-shadow: var(--shadow-deep);
+  border-bottom:1px solid rgba(255,255,255,0.32);position:sticky;top:0;z-index:100;
+}
+.brand{font-size:22px;font-weight:800;letter-spacing:1px;color:#002753;text-shadow:0 0 8px rgba(255,255,255,0.8);}
+
+nav button{
+  background:transparent;border:none;padding:8px 14px;font-weight:600;color:#002644;border-radius:10px;cursor:pointer;transition:0.25s;
+}
+nav button:hover{background:rgba(255,255,255,0.7);box-shadow:0 0 12px var(--glow-blue);transform:translateY(-3px);}
+
+.container{max-width:1000px;margin:2rem auto;padding:0 1rem;}
+
+.card{
+  background:var(--card-bg);backdrop-filter:blur(14px);border-radius:var(--radius);padding:1.5rem;margin-bottom:1.5rem;border:1px solid rgba(255,255,255,0.4);box-shadow: var(--shadow-deep);
+  animation: cardFloat 4s ease-in-out infinite alternate;
+}
+@keyframes cardFloat{from{transform:translateY(0px);}to{transform:translateY(-6px);}}
+
+input{
+  width:100%;padding:12px 14px;margin-top:12px;border-radius:12px;border:1px solid rgba(255,255,255,0.4);
+  background:rgba(255,255,255,0.7);backdrop-filter:blur(10px);transition:0.25s;font-family:inherit;
+}
+input:focus{border-color:var(--glow-purple);box-shadow:0 0 15px var(--glow-purple);transform:scale(1.02);outline:none;}
+
+.btn{
+  background:linear-gradient(135deg,var(--glow-blue),var(--glow-cyan));color:white;border:none;padding:10px 18px;border-radius:12px;font-weight:700;cursor:pointer;margin-top:10px;transition:0.25s;box-shadow:0 4px 15px rgba(77,163,255,0.4);
+}
+.btn:hover{transform:translateY(-4px) scale(1.03);box-shadow:0 0 20px var(--glow-cyan);}
+
+.btn-ghost{
+  background:transparent;border:2px solid rgba(255,255,255,0.6);color:var(--text-dark);padding:10px 18px;border-radius:12px;font-weight:600;cursor:pointer;transition:0.25s;
+}
+.btn-ghost:hover{background:rgba(255,255,255,0.6);box-shadow:0 0 14px var(--glow-purple);transform:translateY(-3px);}
+
+.muted{color:var(--muted);} .small{font-size:12px;color:var(--muted);}
+
+#otpDemo{background:rgba(255,255,255,0.78);padding:6px 10px;border-radius:10px;margin-top:10px;color:#663b3b;box-shadow:0 0 12px rgba(255,255,255,0.8);}
+
+#coursesList > div{display:flex;justify-content:space-between;align-items:center;padding:12px;margin-bottom:10px;border-radius:12px;background:rgba(255,255,255,0.6);backdrop-filter:blur(12px);border:1px solid rgba(255,255,255,0.38);transition:0.25s;}
+#coursesList > div:hover{transform:translateY(-5px) scale(1.01);box-shadow:0 0 20px var(--glow-blue);}
+
+#myEnrollments li{list-style:none;background:rgba(255,255,255,0.78);padding:10px;border-radius:10px;margin-bottom:10px;border:1px solid rgba(255,255,255,0.3);box-shadow:0 0 8px rgba(77,163,255,0.18);}
+
+table{width:100%;border-collapse:collapse;background:rgba(255,255,255,0.78);border-radius:10px;overflow:hidden;}
+th{background:linear-gradient(135deg,var(--glow-purple),var(--glow-blue));color:white;padding:12px;}
+td{padding:10px;border-bottom:1px solid rgba(0,0,0,0.06);}
+
+.foot{padding:15px;text-align:center;color:var(--muted);background:rgba(255,255,255,0.4);backdrop-filter:blur(10px);}
+
+.hidden{display:none;}

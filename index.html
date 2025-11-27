@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>ANTOR 01 ACADEMY — Enrollment</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="top">
+    <div class="brand">ANTOR 01 ACADEMY</div>
+    <nav>
+      <button id="showRegister" type="button">Register</button>
+      <button id="showLogin" type="button">Login</button>
+      <button id="showCourses" type="button">Courses</button>
+      <button id="showAdmin" type="button">Admin</button>
+    </nav>
+  </header>
+
+  <main class="container">
+
+    <!-- REGISTER -->
+    <section id="registerSection" class="card hidden">
+      <h2>Create Account (OTP Required)</h2>
+
+      <form id="registerForm">
+        <input id="regName" placeholder="Full Name" required>
+        <input id="regPhone" placeholder="Phone Number" required>
+        <input id="regEmail" type="email" placeholder="Email" required>
+
+        <div style="display:flex;gap:.6rem;align-items:center;margin-top:.6rem">
+          <button id="sendOtpBtn" type="button" class="btn">Send OTP</button>
+          <div id="otpDemo" class="small muted">(Demo OTP will appear here)</div>
+        </div>
+
+        <div id="otpVerifyArea" class="hidden" style="margin-top:.6rem">
+          <input id="regOtp" placeholder="Enter OTP">
+          <button id="verifyOtpBtn" type="button" class="btn-ghost">Verify OTP</button>
+        </div>
+
+        <!-- Password fields (shown after OTP verified) -->
+        <input id="regPassword" type="password" placeholder="Set Password" required class="hidden">
+        <input id="regPassword2" type="password" placeholder="Confirm Password" required class="hidden">
+
+        <div style="margin-top:.8rem">
+          <button id="completeRegisterBtn" type="submit" class="btn hidden">Create Account</button>
+        </div>
+      </form>
+
+      <p id="regMsg" class="muted small"></p>
+    </section>
+
+    <!-- LOGIN -->
+    <section id="loginSection" class="card hidden">
+      <h2>Student Login</h2>
+
+      <form id="loginForm">
+        <input id="loginEmail" type="email" placeholder="Email" required>
+        <input id="loginPassword" type="password" placeholder="Password" required>
+
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-top:.6rem">
+          <button class="btn" type="submit">Login</button>
+          <a href="#" id="forgotLink" class="muted small">Forgot password?</a>
+        </div>
+      </form>
+
+      <p id="loginMsg" class="muted small"></p>
+
+      <!-- FORGOT PASSWORD SECTION (hidden until user clicks link) -->
+      <div id="forgotSection" class="card hidden" style="margin-top:1rem;">
+        <h3>Password Recovery</h3>
+
+        <div id="forgotStep1">
+          <p class="muted small">Enter the email used for your account. We'll send a reset OTP (demo).</p>
+          <input id="forgotEmail" type="email" placeholder="Your account email">
+          <div style="display:flex;gap:.6rem;align-items:center;margin-top:.6rem">
+            <button id="sendResetOtpBtn" type="button" class="btn">Send Reset OTP</button>
+            <div id="resetOtpDemo" class="small muted">(Reset OTP will appear here)</div>
+          </div>
+        </div>
+
+        <div id="forgotStep2" class="hidden" style="margin-top:.6rem">
+          <input id="resetOtpInput" placeholder="Enter Reset OTP">
+          <input id="newPassword" type="password" placeholder="New Password" class="hidden">
+          <input id="newPassword2" type="password" placeholder="Confirm New Password" class="hidden">
+
+          <div style="display:flex;gap:.6rem;margin-top:.6rem">
+            <button id="verifyResetOtpBtn" type="button" class="btn-ghost">Verify OTP</button>
+            <button id="completeResetBtn" type="button" class="btn hidden">Set New Password</button>
+          </div>
+        </div>
+
+        <p id="forgotMsg" class="muted small" style="margin-top:.6rem"></p>
+      </div>
+    </section>
+
+    <!-- COURSES -->
+    <section id="coursesSection" class="card hidden">
+      <h2>Courses</h2>
+      <div id="coursesList" style="margin-top:.8rem"></div>
+
+      <div id="studentPanel" class="hidden" style="margin-top:1rem">
+        <h3>Your Enrollments</h3>
+        <ul id="myEnrollments"></ul>
+        <div style="margin-top:.6rem">
+          <button id="logoutBtn" class="btn-ghost" type="button">Logout</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ADMIN -->
+    <section id="adminSection" class="card hidden">
+      <h2>Admin Panel</h2>
+
+      <div id="adminLoginArea">
+        <input id="adminPass" type="password" placeholder="Admin Password">
+        <div style="margin-top:.6rem">
+          <button id="adminLoginBtn" class="btn" type="button">Enter</button>
+        </div>
+        <p class="muted small" style="margin-top:.6rem">Demo password: <strong>admin123</strong></p>
+      </div>
+
+      <div id="adminPanel" class="hidden" style="margin-top:1rem">
+        <h3>All Student Enrollments</h3>
+        <table id="enrollTable" style="margin-top:.6rem">
+          <thead>
+            <tr><th>Name</th><th>Email</th><th>Course</th><th>Date</th></tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+
+        <div style="margin-top:.8rem">
+          <button id="adminLogout" class="btn-ghost" type="button">Logout Admin</button>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="foot">© ANTOR 01 ACADEMY</footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
